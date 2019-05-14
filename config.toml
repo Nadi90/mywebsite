@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "ARM: My Website"
+title = "Nadia Antony"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -18,7 +18,7 @@ enableEmoji = true
   # Sets the meta tag description
   description          = "Test website to learn more about Blogdown and Hugo"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "Title"
+  navbarTitle          = "Nadia Antony"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
 
@@ -90,22 +90,22 @@ enableEmoji = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "My Website"
+  header    = "Nadia Antony"
 
-  paragraph = "Test website to learn more about Blogdown and Hugo <i class='fa fa-hand-peace-o'></i>"
+  paragraph = "Data Scientist | Open Data Enthusiast | Dog Lover <i class='fa fa-hand-peace-o'></i>"
 
-  about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+  about     = " "
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
-    src       = "/img/main/logo.png"
+    src       = "/img/main/1.png"
     # Sets Image to be a cirlce
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
     imperfect = false
     width     = ""
-    alt       = "Logo"
+    alt       = "headshot"
 
 [params.postAmount]
 # Sets the number of recent posts to show in the sidebar. The default value is 5.
@@ -132,13 +132,13 @@ enableEmoji = true
   weight = 3
 
 [[menu.main]]
-  name = "Itemized"
-  url = "/itemized/"
+  name = "Projects"
+  url = "/projects/"
   identifier = "fa fa-list"
   weight = 4
 
 [[menu.main]]
-  name = "Categories"
+  name = "Talks"
   url = "/categories/"
   identifier = "fa fa-sitemap"
   weight = 5
@@ -154,47 +154,14 @@ enableEmoji = true
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github           = "jpescador/hugo-future-imperfect"
-  gitlab           = ""
-  stackoverflow    = "" # User Number
-  bitbucket        = ""
-  jsfiddle         = ""
-  codepen          = ""
+  github           = "NadiaAntony"
   # Visual Art Communities
-  deviantart       = ""
-  flickr           = "example"
-  behance          = ""
-  dribbble         = ""
   # Publishing Communities
   wordpress        = ""
   medium           = ""
   # Professional/Business Oriented Communities
-  linkedin         = "example"
-  linkedin_company = "examplebusiness"
-  foursquare       = ""
-  xing             = ""
-  slideshare       = ""
+  linkedin         = "nadiaantony"
   # Social Networks
-  facebook         = "example"
-  googleplus       = ""
-  reddit           = "example"
-  quora            = ""
-  youtube          = ""
-  vimeo            = ""
-  whatsapp         = "" # WhatsApp Number
-    # WeChat and QQ need testing.
-    wechat         = ""
-    qq             = "" # User ID Number
-  instagram        = "example"
-  tumblr           = ""
-  twitter          = "example"
-  skype            = ""
-  snapchat         = ""
-  pinterest        = "example"
-  telegram         = "example"
-  vine             = ""
-  googlescholar    = ""
-  orcid            = ""
-  researchgate     = "example"
+  twitter          = "OAITI_"
   # Email
-  email            = "example"
+  email            = "nadia@oaiti.org"

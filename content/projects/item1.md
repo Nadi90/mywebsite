@@ -2,14 +2,14 @@
 author: Nadia
 categories:
 - ""
-description: App1.
+description: Census Data Viz
 featured: ""
 featuredalt: ""
 featuredpath: ""
 link: '#'
 linktitle: ""
-title: Fancy App 1
+title: Census Data Viz
 type: itemized
 ---
 
-## App 1
+[Slides](https://nadiantony.netlify.com/slides/presentation.html)

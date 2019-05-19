@@ -1,6 +1,6 @@
 ---
 author: Nadia
-categories: Workshop
+categories:
 - ""
 description: Using tidy R packages to visualize census data
 featured: ""

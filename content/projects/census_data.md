@@ -1,14 +1,14 @@
 ---
 author: Nadia
-categories:
+categories: Workshop
 - ""
-description: Census Data Viz
+description: Using tidy R packages to visualize census data
 featured: ""
 featuredalt: ""
 featuredpath: ""
 link: '#'
 linktitle: ""
-title: Census Data Viz
+title: Census Data Visualization in R 
 type: itemized
 ---
 

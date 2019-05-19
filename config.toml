@@ -138,7 +138,7 @@ enableEmoji = true
   weight = 4
 
 [[menu.main]]
-  name = "Talks"
+  name = "Site"
   url = "/categories/"
   identifier = "fa fa-sitemap"
   weight = 5

@@ -16,7 +16,7 @@ enableEmoji = true
 
 [params]
   # Sets the meta tag description
-  description          = "Test website to learn more about Blogdown and Hugo"
+  description          = "Personal website"
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "Nadia Antony"
   # Sets where "View More Posts" links
@@ -47,13 +47,13 @@ enableEmoji = true
   socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
   socialShareTwitter   = true
-  socialShareGoogleplus = true
-  socialShareFacebook  = true
-  socialShareReddit    = true
+  socialShareGoogleplus = false
+  socialShareFacebook  = false
+  socialShareReddit    = false
   socialShareLinkedin  = true
-  socialShareStumbleupon = true
-  socialSharePinterest = true
-  socialShareEmail     = true
+  socialShareStumbleupon = false
+  socialSharePinterest = false
+  socialShareEmail     = false
 
   # Load custom CSS or JavaScript files. The variable is an array so that you
   # can load multiple files if necessary. You can also load the standard theme
@@ -99,7 +99,7 @@ enableEmoji = true
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
-    src       = "/img/main/1.png"
+    src       = "/img/main/display_pic.jpg"
     # Sets Image to be a cirlce
     circle    = false
     # Sets Image to be Future Imperfect's hexagon

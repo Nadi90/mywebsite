@@ -1,0 +1,164 @@
+---
+title: Spruce up your next Rmarkdown
+author: ''
+date: '2020-01-06'
+slug: spruce-up-your-rmarkdown
+categories: ["R Markdown"]
+tags: ["CSS", "R Markdown"]
+description: 'CSS tricks and R packages to make beautiful online documents'
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="/rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>Small tweaks to components of an online document can make a difference in how easily the information is absorbed. Here are a couple of CSS properties I use quite frequently to make polished looking online documents.
+<br/></p>
+<style>
+img {
+    border-radius: 10px;
+} 
+
+#shadow-test {
+    text-shadow: 0.04em 0.1em 0px #a2a8ab;
+}
+
+#highlight-test {
+    text-shadow: 0.04em 0.04em 11px yellow;
+}
+
+div.banner {
+    background-color: #fee566;
+    border-radius: 10px; 
+    padding: 10px;
+}
+</style>
+<div id="border-radius" class="section level2">
+<h2>1. border-radius</h2>
+<p>Gives the element a rounded corner. I use this property indiscriminately for all images!</p>
+<pre class="css"><code>img {
+    border-radius: 5px;
+}</code></pre>
+<p>Specifying a background color and applying this property on a div element helps to create a note or banner.</p>
+<pre class="css"><code>div.banner {
+    border-radius: 10px;
+    background-color: #fee566;
+    padding: 10px;
+}</code></pre>
+<div class="banner">
+<p>Important text to remember!</p>
+</div>
+<p><br/></p>
+</div>
+<div id="text-shadow" class="section level2">
+<h2>2. text-shadow</h2>
+<p>Cool effect to highlight text. Can be used on titles or taglines like this:</p>
+<pre class="css"><code>#shadow-test {
+    text-shadow: 0.04em 0.1em 0px #a2a8ab;
+}
+
+#highlight-test {
+    text-shadow: 0.04em 0.04em 11px yellow;
+}</code></pre>
+<ul>
+<li><h3 id="title-text-with-shadow"><span id="shadow-test"> Title Text with Shadow! </span><br/></h3></li>
+<li>This is a sententence with <span id="highlight-test"> Highlighted Text! </span></li>
+</ul>
+<p>The first value applies a horizontal shift, second is a vertical shift and third value is the amount of blur. Lastly we specify the color of the highlight/shadow.</p>
+<p><br/></p>
+</div>
+<div id="tables-with-value-highlighting" class="section level2">
+<h2>3. Tables with value highlighting</h2>
+<p>Tables are sometimes essential in documents when you want to show summary data or precise values. One quick and useful way to liven up tables is by using the awesome R packages <code>kableExtra</code> or <code>gt</code> to highlight values in cells. You can highlight values accoring to your specification, for eg. showcase the max or min values, or values above/below the mean.</p>
+<pre class="r"><code>library(tidyverse)
+library(kableExtra)
+# using kableExtra to highlight max value in each column
+iris %&gt;%
+    group_by(Species) %&gt;%
+    summarise_if(is.numeric, mean) %&gt;%
+    mutate_if(is.numeric, function(x){
+        x = cell_spec(round(x, digits = 2), &quot;html&quot;, color = ifelse(x == max(x), &quot;brown&quot;, &quot;grey&quot;))
+        }) %&gt;% 
+    kable(format = &quot;html&quot;, escape = F) %&gt;%
+    kable_styling()</code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+Sepal.Length
+</th>
+<th style="text-align:left;">
+Sepal.Width
+</th>
+<th style="text-align:left;">
+Petal.Length
+</th>
+<th style="text-align:left;">
+Petal.Width
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+setosa
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">5.01</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: brown !important;">3.43</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">1.46</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">0.25</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+versicolor
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">5.94</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">2.77</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">4.26</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">1.33</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+virginica
+</td>
+<td style="text-align:left;">
+<span style="     color: brown !important;">6.59</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: grey !important;">2.97</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: brown !important;">5.55</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: brown !important;">2.03</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>gt</code> package <a href="https://gt.rstudio.com/reference/index.html">link</a> also comes with neat formatting functions and even functions to embed images into a table!</p>
+</div>

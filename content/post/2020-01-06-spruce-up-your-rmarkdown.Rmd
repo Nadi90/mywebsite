@@ -1,0 +1,105 @@
+---
+title: Spruce up your next Rmarkdown
+author: ''
+date: '2020-01-06'
+slug: spruce-up-your-rmarkdown
+categories: ["R Markdown"]
+tags: ["CSS", "R Markdown"]
+description: 'CSS tricks and R packages to make beautiful online documents'
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+Small tweaks to components of an online document can make a difference in how easily the information is absorbed. Here are a couple of CSS properties I use quite frequently to make polished looking online documents.
+<br/>
+
+<style>
+img {
+    border-radius: 10px;
+} 
+
+#shadow-test {
+    text-shadow: 0.04em 0.1em 0px #a2a8ab;
+}
+
+#highlight-test {
+    text-shadow: 0.04em 0.04em 11px yellow;
+}
+
+div.banner {
+    background-color: #fee566;
+    border-radius: 10px; 
+    padding: 10px;
+}
+</style>
+
+## 1. border-radius
+
+Gives the element a rounded corner. I use this property indiscriminately for all images!
+
+```css
+img {
+    border-radius: 5px;
+}
+```
+
+Specifying a background color and applying this property on a div element helps to create a note or banner.
+
+```css
+div.banner {
+    border-radius: 10px;
+    background-color: #fee566;
+    padding: 10px;
+}
+```
+
+<div class = "banner">
+Important text to remember!
+</div>
+
+<br/>
+
+## 2. text-shadow
+
+Cool effect to highlight text. Can be used on titles or taglines like this:
+
+```css
+#shadow-test {
+    text-shadow: 0.04em 0.1em 0px #a2a8ab;
+}
+
+#highlight-test {
+    text-shadow: 0.04em 0.04em 11px yellow;
+}
+```
+
+*  ### <span id="shadow-test"> Title Text with Shadow! </span><br/>
+* This is a sententence with <span id="highlight-test"> Highlighted Text! </span>
+
+The first value applies a horizontal shift, second is a vertical shift and third value is the amount of blur. Lastly we specify the color of the highlight/shadow.
+
+<br/>
+
+## 3. Tables with value highlighting
+
+Tables are sometimes essential in documents when you want to show summary data or precise values. One quick and useful way to liven up tables is by using the awesome R packages `kableExtra` or `gt` to highlight values in cells. You can highlight values accoring to your specification, for eg. showcase the max or min values, or values above/below the mean.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
+# using kableExtra to highlight max value in each column
+iris %>%
+    group_by(Species) %>%
+    summarise_if(is.numeric, mean) %>%
+    mutate_if(is.numeric, function(x){
+        x = cell_spec(round(x, digits = 2), "html", color = ifelse(x == max(x), "brown", "grey"))
+        }) %>% 
+    kable(format = "html", escape = F) %>%
+    kable_styling()
+```
+
+The `gt` package [link](https://gt.rstudio.com/reference/index.html) also comes with neat formatting functions and even functions to embed images into a table!
+
+

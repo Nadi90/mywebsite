@@ -76,7 +76,7 @@ Cool effect to highlight text. Can be used on titles or taglines like this:
 ```
 
 *  ### <span id="shadow-test"> Title Text with Shadow! </span><br/>
-* This is a sententence with <span id="highlight-test"> Highlighted Text! </span>
+* This is a sentence with <span id="highlight-test"> Highlighted Text! </span>
 
 The first value applies a horizontal shift, second is a vertical shift and third value is the amount of blur. Lastly we specify the color of the highlight/shadow.
 
@@ -100,6 +100,6 @@ iris %>%
     kable_styling()
 ```
 
-The `gt` package [link](https://gt.rstudio.com/reference/index.html) also comes with neat formatting functions and even functions to embed images into a table!
+The `gt` package [(link)](https://gt.rstudio.com/reference/index.html) also comes with neat formatting functions and even functions to embed images into a table!
 
 
